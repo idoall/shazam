@@ -1,7 +1,7 @@
 ROOT:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SHAZAM_PROXY_OUT:=$(ROOT)/bin/shazam-proxy
 SHAZAM_CC_OUT:=$(ROOT)/bin/shazam-cc
-PKG:=$(shell go list -m)
+PKG:=$(shell go list -e)
 
 .PHONY: all build shazam-proxy shazam-cc parser clean test build_with_coverage
 all: build test
